@@ -1,9 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/dist
 /node_modules
+/vite
 /.pnp
 .pnp.js
+.env
 
 # testing
 /coverage
@@ -24,10 +27,10 @@ yarn-error.log*
 
 
 # python
-*/*/.env
-*/*/env
-*/*/.venv
-*/*/venv
+**/.env
+**/env
+**/.venv
+**/venv
 
 backend/**/__pycache__
 backend/**/migrations
