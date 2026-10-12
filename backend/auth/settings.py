@@ -63,19 +63,19 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://0.0.0.0:5173",
-    "http://100.64.51.2:5173",
+    "http://localhost:4000",
+    "http://127.0.0.1:4000",
+    "http://0.0.0.0:4000",
+    "http://100.64.51.2:4000",
 )
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "http://0.0.0.0:5173",
-    "http://100.64.51.2:5173",
+    "http://localhost:4000",
+    "http://127.0.0.1:4000",
+    "http://0.0.0.0:4000",
+    "http://100.64.51.2:4000",
 ]
 
 CORS_ALLOW_METHODS = (

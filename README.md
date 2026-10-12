@@ -156,9 +156,34 @@ This creates the database and initializes Django’s default auth tables.
 
 ## Running the project
 
-You need to run both the backend and frontend in separate terminals.
+The project is configured so the root development script starts both the frontend and the backend together.
 
-### Start the backend
+### Start the full app
+
+From the project root:
+
+```bash
+yarn dev
+```
+
+This runs:
+
+- Vite frontend on port `4000`
+- Django backend on port `8000`
+
+The app is available at:
+
+- Frontend: <http://localhost:4000/>
+- Backend API: <http://localhost:8000/>
+
+The Django API endpoints include:
+
+- <http://localhost:8000/auth/register/>
+- <http://localhost:8000/auth/login/>
+- <http://localhost:8000/auth/protected/>
+- <http://localhost:8000/auth/refresh/>
+
+### Start the backend manually
 
 ```bash
 cd backend
@@ -166,25 +191,11 @@ source .venv/bin/activate
 python manage.py runserver 0.0.0.0:8000
 ```
 
-The Django API will be available at:
-
-- <http://localhost:8000/auth/register/>
-- <http://localhost:8000/auth/login/>
-- <http://localhost:8000/auth/protected/>
-- <http://localhost:8000/auth/refresh/>
-
-### Start the frontend
-
-In another terminal:
+### Start the frontend manually
 
 ```bash
-cd /home/tumelo/Work/workspaces/react-django-auth
-yarn dev --host 0.0.0.0
+yarn vite --host 0.0.0.0 --port 4000
 ```
-
-The frontend typically runs at:
-
-- <http://localhost:5173/>
 
 ---
 
@@ -279,16 +290,16 @@ This project is a development starter and is not production-hardened by default.
 
 ## Useful commands
 
-### Starting the Frontend
+### Full app workflow
 
 ```bash
 yarn install
-yarn dev --host 0.0.0.0
+yarn dev
 yarn build
 yarn preview
 ```
 
-### Starting the Backend
+### Backend-only workflow
 
 ```bash
 cd backend
@@ -296,6 +307,8 @@ source .venv/bin/activate
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
 ```
+
+> In this setup, `yarn dev` is the convenience script that starts the frontend and backend together for local development.
 
 ---
 
